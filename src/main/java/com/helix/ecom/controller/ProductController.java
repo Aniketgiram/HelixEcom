@@ -30,4 +30,9 @@ public class ProductController {
     public void saveProduct(@RequestBody Product product){
         productService.saveProduct(product);
     }
+
+    @DeleteMapping("/deleteProduct")
+    public void deleteProduct(@RequestParam("productId") int productId){
+        productService.deleteProduct(productId);
+    }
 }

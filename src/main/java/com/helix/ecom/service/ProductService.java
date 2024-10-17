@@ -20,4 +20,8 @@ public class ProductService {
     public void saveProduct(Product product) {
         productRepository.save(product);
     }
+
+    public void deleteProduct(int productID) {
+        productRepository.deleteById(productID);
+    }
 }
