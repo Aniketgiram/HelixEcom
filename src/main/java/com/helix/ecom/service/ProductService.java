@@ -40,4 +40,8 @@ public class ProductService {
         product.setImageType(imageFile.getContentType());
         productRepository.save(product);
     }
+
+    public List<Product> searchProducts(String keyword) {
+        return productRepository.searchProducts(keyword);
+    }
 }
