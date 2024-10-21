@@ -36,6 +36,11 @@ public class ProductController {
         return new ResponseEntity<Product>(productService.getProductBYID(productId), HttpStatus.OK);
     }
 
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProduct(@RequestParam(name = "keyword", required = false) String keyword){
+        return new ResponseEntity<>(productService.searchProducts(keyword), HttpStatus.OK);
+    }
+
     @PostMapping("/product")
     public ResponseEntity<?> saveProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile){
         try {
